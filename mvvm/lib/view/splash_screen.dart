@@ -7,6 +7,7 @@ import 'package:mvvm/res/getx_localization/languages.dart';
 import 'package:mvvm/utils/component_widgets/general_exception.dart';
 import 'package:mvvm/utils/component_widgets/internet_exception_widget.dart';
 import 'package:mvvm/utils/component_widgets/round_button.dart';
+import 'package:mvvm/view_models/services/splash_services.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -16,19 +17,27 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  final SplashServices _splashServices = SplashServices();
+
+  @override
+  void initState() {
+    _splashServices.isUserLoggedIn();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('email_hint'.tr),
+        body: Container(
+      color: Colors.teal,
+      height: double.infinity,
+      width: double.infinity,
+      child: Center(
+        child: Text(
+          "welcome".tr,
+          style: TextStyle(fontSize: 40),
+        ),
       ),
-      body: RoundButton(
-        onPressed: () {},
-        title: 'Click me',
-        width: double.infinity,
-        height: 100,
-        textColor: Colors.white,
-      ),
-    );
+    ));
   }
 }

@@ -13,6 +13,7 @@ class Languages extends Translations {
           'no_internet': 'No internet connection',
           'retry': 'Retry',
           'general_exception': 'Something went wrong\nPlease try again',
+          'welcome': 'Welcome Back',
         },
         'ur_PK': {
           'hello': 'مرحبا بالعالم',
